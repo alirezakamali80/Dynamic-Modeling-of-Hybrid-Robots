@@ -1,21 +1,22 @@
 # Dynamic Analysis of Gough-Stewart Parallel Manipulators in a Serial Configuration
 
-This repository contains the code, models, and documentation for my Bachelor's thesis project in Mechanical Engineering at the University of Tehran. The project focuses on the dynamic analysis of hyper-redundant hybrid serial-parallel robots based on the Gough-Stewart platform, configured in a stacked serial arrangement. These robots are inspired by natural structures like elephant trunks or octopus arms, offering high redundancy for applications in humanoid legs, robotic manipulators, and bio-inspired systems.
+This repository contains the description for my Bachelor's thesis project in Mechanical Engineering at the University of Tehran. The project focuses on the dynamic analysis of hyper-redundant parallel Gough-Stewart robots, configured in a stacked serial arrangement. These robots are inspired by natural structures like elephant trunks or octopus arms, offering high redundancy for applications in humanoid legs, robotic manipulators, and bio-inspired systems.
 
-![Gough-Stewart](https://github.com/alirezakamali80/repository/Dynamic-Modeling-of-Hybrid-Robots/images/N3.jpg)
+![Gough-Stewart](https://github.com/alirezakamali80/repository/Dynamic-Modeling-of-Hybrid-Robots/images/N3.png)
 ## My Bachelor Thesis Overview
 - **Title**: Dynamic Analysis of Gough-Stewart Parallel Robots in Serial Configuration
-- **Author**: Alireza Kamali Ardekani
-- **Supervisors**:
+- **Team Members**:
+  - Hossein Akbari (Undergraduate student - School of Mechanical Engineering, University of Tehran)
   - Dr. Arash Bahrami (School of Mechanical Engineering, University of Tehran)
   - Dr. Mehdi Tale Masouleh (Human-Robot Interaction Laboratory, School of Electrical and Computer Engineering, University of Tehran)
-- **Date**: Summer 2024 (1403 in Persian calendar)
-- **Objective**: Develop a general dynamic model for an arbitrary number of serially stacked Gough-Stewart platforms using the principle of virtual work. This includes inverse kinematics, inverse dynamics, and validation against simulations.
+  - Dr. Ehsan Hosseinian (School of Mechanical Engineering, University of Tehran)
+ 
+- **Objective**: Develop a general dynamic model for an arbitrary number of serially stacked Gough-Stewart platforms using the principle of virtual work. This includes inverse kinematics, inverse dynamics, and validation against simulations in softwares like Simscape Matlab and ADAMS.
 
 The robot structure consists of multiple 6-DOF Gough-Stewart segments connected in series, each with 6 prismatic actuators (cylinder-piston pairs) and joints (universal-prismatic-spherical). The model accounts for fictitious wrenches to handle dynamics recursively from the end-effector to the base.
 
 ## Key Contributions
-- **Kinematic Modeling**: Built upon prior work [5] for inverse kinematics and Jacobian matrices, relating task-space velocities to joint-space velocities. Updated relations for universal joints at the base instead of spherical ones.
+- **Kinematic Modeling**: Built upon prior work [5] for inverse kinematics and Jacobian matrices, relating task-space velocities to joint-space velocities. Updated relations for angular velocity ters when universal joints are used at the base of each robots instead of spherical ones.
 - **Dynamic Modeling (Novelty)**: Derived inverse dynamics equations using the virtual work principle. The model is recursive, solving from the top segment downward, incorporating end-effector wrenches, cylinder/piston dynamics, and transferred wrenches between segments.
 - **Validation**: Compared actuator forces from the analytical model against SimScape Multibody simulations for spiral and circular end-effector paths. Tested on robots with 2, 6, and 10 segments.
   - Minimum error: 0.00% (vertical motion, 2-segment robot)
@@ -25,27 +26,32 @@ The robot structure consists of multiple 6-DOF Gough-Stewart segments connected 
 
 ## Methodology
 1. **Inverse Kinematics**: Optimized using weighted Jacobian matrices to resolve redundancy.
-2. **Inverse Dynamics**: Formulated as:
-   \[
-   \mathbf{f}_p = -{}^{p-1}\mathbf{J}_p^{-T} (\mathbf{W}'_{p,e} + \mathbf{W}'_{p,cyl} + \mathbf{W}'_{p,pis} + \mathbf{W}'_{p,Tr})
-   \]
-   Where \(\mathbf{f}_p\) are actuator forces for segment \(p\), and wrenches include end-effector, inertial, gravitational, and transferred terms.
+2. **Inverse Dynamics**: Formulated as:  
+
+$$
+\mathbf{f}_p = -{}^{p-1}\mathbf{J}_p^{-T} 
+\left(\mathbf{W}'_{p,e} + \mathbf{W}'_{p,cyl} + \mathbf{W}'_{p,pis} + \mathbf{W}'_{p,Tr}\right)
+$$
+
+Where $\mathbf{f}_p$ are actuator forces for segment $p$, and wrenches include end-effector, inertial, gravitational, and transferred terms.
+
 3. **Simulation**: Used MATLAB/SimScape for multi-body dynamics verification.
 
 ## Results
 - Derived a flexible equation of motion for any number of segments.
 - Validated model shows good agreement with simulations, with errors increasing for more complex motions and higher redundancy.
-- Published as a conference paper at the International Conference on Robotics and Mechatronics (ICROM 2024).
+- Published as a conference paper at the [International Conference on Robotics and Mechatronics (ICRoM 2024)](https://ieeexplore.ieee.org/document/10903648/).  
+  Also, reduced models of these manipulators are being developed by our team, and two papers (one in **ICRoM 2025** and one in a **scientific journal**) are predicted in the future.
+
 
 ## Future Work
 This work is part of ongoing research at the Human-Robot Interaction Lab (TaarLab):
 - Kinematic sensitivity indices (Niusha Zand)
 - Model-based control design (Parya Rozbahani)
-- Reinforcement learning modeling (Amirhossein Nourian)
-- Deep learning modeling (Mohammad Montazeri)
+- Intelligent modeling (Amirhossein Nourian & Mohammad Montazeri)
 - Stabilization (Taravat Yazdani)
 - Workspace analysis (Mohammad Ghaibi, Hedyeh Moghimi)
-- Reduced-order modeling and practical implementation considering environmental factors.
+- Reduced-order modeling(Hossein Akbari - Alireza Kamali - Behzad Danaei)
 
 ## References
 1. P. Namazian, M. T. Masouleh, and M. R. Zakerzadeh, “SPAR-Leg,” IEEE, 2023.
@@ -54,4 +60,6 @@ This work is part of ongoing research at the Human-Robot Interaction Lab (TaarLa
 5. P. Namazian, M. T. Masouleh, and M. R. Zakerzadeh, "A general formulation for kinematic analysis and redundancy resolution of hyper-redundant Gough-Stewart hybrid platforms," 2023.
 6. Taghirad, Hamid D. "Parallel Robots." CRC Press, 2013.
 
-For more details, see the presentation PDF in this repository. Feel free to contact me for collaborations or questions!
+For more details, see the [presentation PDF](assets/presentation.pdf) in this repository.
+
+**Feel free to contact me for collaborations or questions!**
