@@ -38,7 +38,7 @@ $$
 
 Where $\mathbf{f}_p$ are actuator forces for segment $p$, and wrenches include end-effector, inertial, gravitational, and transferred terms.
 
-3. **Simulation**: Used MATLAB/SimScape for multi-body dynamics verification.
+3. **Simulation**: Used MATLAB/SimScape for multi-body dynamics verification **(Videos attached in the above files.)**
 
 ## Results
 - Derived a flexible equation of motion for any number of segments.
