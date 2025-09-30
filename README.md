@@ -63,6 +63,6 @@ This work is part of ongoing research at the Human-Robot Interaction Lab (TaarLa
 5. P. Namazian, M. T. Masouleh, and M. R. Zakerzadeh, "A general formulation for kinematic analysis and redundancy resolution of hyper-redundant Gough-Stewart hybrid platforms," 2023.
 6. Taghirad, Hamid D. "Parallel Robots." CRC Press, 2013.
 
-For more details, see the [presentation PDF](assets/presentation.pdf) in this repository.
+For more details, see the [presentation PDF](https://github.com/alirezakamali80/Dynamic-Modeling-of-Hybrid-Robots/blob/main/presentation.pdf) in this repository.
 
 **Feel free to contact me for collaborations or questions!**
