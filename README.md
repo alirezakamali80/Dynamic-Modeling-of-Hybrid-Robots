@@ -2,7 +2,10 @@
 
 This repository contains the description for my Bachelor's thesis project in Mechanical Engineering at the University of Tehran. The project focuses on the dynamic analysis of hyper-redundant parallel Gough-Stewart robots, configured in a stacked serial arrangement. These robots are inspired by natural structures like elephant trunks or octopus arms, offering high redundancy for applications in humanoid legs, robotic manipulators, and bio-inspired systems.
 
-![Gough-Stewart](https://github.com/alirezakamali80/repository/Dynamic-Modeling-of-Hybrid-Robots/N3.png)
+<p align="center">
+  <img src="https://github.com/alirezakamali80/Dynamic-Modeling-of-Hybrid-Robots/blob/main/N3.png" alt="Gough-Stewart"/>
+</p>
+
 ## My Bachelor Thesis Overview
 - **Title**: Dynamic Analysis of Gough-Stewart Parallel Robots in Serial Configuration
 - **Team Members**:
